@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+<f:view>
+    <div class="card">
+        <h:form id="person_edit_form">
+            <p:growl>
+                <p:autoUpdate/>
+            </p:growl>
+            <h:panelGrid columns="2" cellpadding="7" styleClass="mb-3">
+                <p:outputLabel for="id" value="Person id:"/>
+                <p:inputText id="id" value="#{personController.personContext.personPack.person.id}">
+                    <p:ajax event="blur" process="@this"/>
+                </p:inputText>
+                <p:outputLabel for="firstName" value="First Name:" />
+                <p:inputText id="firstName" value="#{personController.personContext.personPack.person.firstName}">
+                    <p:ajax event="blur" process="@this"/>
+                </p:inputText>
+                <p:outputLabel for="lastName" value="Last Name:" />
+                <p:inputText id="lastName" value="#{personController.personContext.personPack.person.lastName}"><p:ajax event="blur" process="@this"/></p:inputText>
+                <p:outputLabel for="addressId" value="Linked Address:" />
+                <h:outputText id="existAdd" value="#{personController.personContext.personPack.person.addressId}" rendered="#{not empty personController.personContext.personPack.person.addressId}"/>
+                <p:commandButton value="New Address" id="addressId" action="#{personController.createAddressFromPerson()}" styleClass="mr-2" immediate="true"
+                                 rendered="#{empty personController.personContext.personPack.person.addressId}"/>
+            </h:panelGrid>
+        </h:form>
+    </div>
+</f:view>
+</html>

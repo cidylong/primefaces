@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+<f:view>
+    <div class="card">
+        <h:form id="address_edit_form">
+            <p:growl>
+                <p:autoUpdate/>
+            </p:growl>
+            <p:panelGrid columns="2" cellpadding="7" styleClass="mb-3">
+                <p:outputLabel for="id" value="Address id:"/>
+                <p:inputText id="id" value="#{personController.personContext.editingAddress.id}"/>
+                <p:outputLabel for="referId" value="Refer Id:" />
+                <p:inputText id="referId" value="#{personController.personContext.editingAddress.referId}"/>
+                <p:outputLabel for="streetName" value="Street Address:" />
+                <p:inputText id="streetName" value="#{personController.personContext.editingAddress.street}"/>
+                <p:outputLabel for="city" value="Locality:" />
+                <p:inputText id="city" value="#{personController.personContext.editingAddress.city}"/>
+                <p:outputLabel for="state" value="State:" />
+                <p:inputText id="state" value="#{personController.personContext.editingAddress.state}"/>
+                <p:outputLabel for="zip" value="Post Code:" />
+                <p:inputText id="zip" value="#{personController.personContext.editingAddress.zip}"/>
+                <p:outputLabel for="country" value="Country:" />
+                <p:inputText id="country" value="#{personController.personContext.editingAddress.country}"/>
+            </p:panelGrid>
+            <h:panelGrid style="display:block" border="0">
+                <p:commandButton id="save" value="Save to Pack" action="#{personController.saveAddressToPack()}" icon="fa fa-fw fa-send">
+                    <p:confirm header="Confirmation" message="Are you sure?"/></p:commandButton>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                    <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                    <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                </p:confirmDialog>
+            </h:panelGrid>
+        </h:form>
+    </div>
+</f:view>
+</html>
