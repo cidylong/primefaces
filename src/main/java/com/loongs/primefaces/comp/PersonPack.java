@@ -1,6 +1,7 @@
 package com.loongs.primefaces.comp;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class PersonPack implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -27,5 +28,22 @@ public class PersonPack implements Serializable {
             }
         }
         this.address = address;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonPack that = (PersonPack) o;
+        return Objects.equals(person, that.person) && Objects.equals(address, that.address);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(person, address);
+    }
+    @Override
+    public String toString() {
+        return "PersonPack{" +
+                "person=" + person +
+                ", address=" + address +
+                '}';
     }
 }

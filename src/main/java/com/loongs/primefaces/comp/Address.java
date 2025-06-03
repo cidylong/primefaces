@@ -41,4 +41,16 @@ public class Address implements Serializable {
     public int hashCode() {
         return Objects.hash(id, referId, street, city, state, zip, country);
     }
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id='" + id + '\'' +
+                ", referId='" + referId + '\'' +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

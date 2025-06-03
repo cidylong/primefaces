@@ -11,22 +11,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 <h:body>
-    <div class="card">
-        <h3 class="mt-0">Edit Address with Person View Tab</h3>
-        <p:tabView activeIndex="#{personController.activeIndex}">
-            <f:facet name="actions">Global actions</f:facet>
-            <p:tab title="Person - View">
-                <f:facet name="actions">Person View</f:facet>
-                <ui:include src="personViewTab.xhtml"/>
-            </p:tab>
-            <p:tab>
-                <f:facet name="actions">Address Edit</f:facet>
-                <f:facet name="title">
-                    <span>Address Edit</span> <p:badge value="3" severity="danger" class="ml-1"/>
-                </f:facet>
-                <ui:include src="addressEditTab.xhtml"/>
-            </p:tab>
-        </p:tabView>
-    </div>
+    <ui:composition template="../template.xhtml">
+        <ui:define name="content">
+        <div class="card">
+            <h3 class="mt-0">Edit Address with Person View Tab</h3>
+            <p:tabView activeIndex="#{personController.activeIndex}">
+                <f:facet name="actions">Global actions</f:facet>
+                <p:tab title="Person - View">
+                    <f:facet name="actions">Person View</f:facet>
+                    <ui:include src="personViewTab.xhtml"/>
+                </p:tab>
+                <p:tab>
+                    <f:facet name="actions">Address Edit</f:facet>
+                    <f:facet name="title">
+                        <span>Address Edit</span> <p:badge value="3" severity="danger" class="ml-1"/>
+                    </f:facet>
+                    <ui:include src="addressEditTab.xhtml"/>
+                </p:tab>
+            </p:tabView>
+        </div>
+        </ui:define>
+    </ui:composition>
 </h:body>
 </html>

@@ -11,7 +11,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 <h:body>
+    <ui:composition template="../template.xhtml">
+        <ui:define name="content">
+            <ui:include src="personEditTab.xhtml"/>
+        </ui:define>
+    </ui:composition>
     <!--<h5>Popup</h5>-->
-    <ui:include src="personEditTab.xhtml"/>
 </h:body>
 </html>

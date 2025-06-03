@@ -1,0 +1,83 @@
+#top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 2px;
+    margin: 0px 0px 5px 0px;
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 2px;
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+}
+
+#left {
+    float: left;
+    background-color: #dddddd;
+    padding: 2px;
+    width: 150px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 2px;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    min-height: 63px;
+    height:auto;
+    padding: 2px;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 2px;
+    min-height: 200px;
+    height:auto;
+    margin-left: 160px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 2px;
+    min-height: 63px;
+    height:auto;
+    margin: 0px 160px 0px 160px;
+}
+
+.truncate {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+.ui-layout-north {
+    z-index:20 !important;
+    overflow:visible !important;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+    overflow:visible !important;
+}
+
+#top a:link, #top a:visited {
+    color: white;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+    color: black;
+    font-weight : bold;
+    text-decoration : underline;
+}

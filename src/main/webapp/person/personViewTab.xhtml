@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="jakarta.faces.core">
-<f:view>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
     <h:panelGrid columns="2" cellpadding="7" styleClass="mb-3">
         <p:outputLabel for="id" value="Person id:"/>
         <h:outputText id="id" value="#{personController.personContext.personPack.person.id}"/>
@@ -17,5 +13,4 @@
         <p:outputLabel for="existAdd" value="Linked Address:" />
         <h:outputText id="existAdd" value="#{personController.personContext.personPack.person.addressId}"/>
     </h:panelGrid>
-</f:view>
-</html>
+</ui:composition>

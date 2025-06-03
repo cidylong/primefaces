@@ -30,4 +30,13 @@ public class Person implements Serializable {
     public int hashCode() {
         return Objects.hash(id, firstName, lastName, addressId);
     }
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", addressId='" + addressId + '\'' +
+                '}';
+    }
 }

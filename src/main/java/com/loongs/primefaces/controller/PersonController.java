@@ -15,9 +15,10 @@ import java.util.logging.Logger;
 public class PersonController implements Serializable {
     private static final Logger logger = Logger.getLogger(PersonController.class.getName());
     private static final long serialVersionUID = 0L;
+    private static String HOME = "index.xhtml?faces-redirect=true";
     private static String VIEW_PERSON = "/person/personView.xhtml";
-    private static String EDIT_PERSON = "/person/personEdit.xhtml";
-    private static String TV_PERSON_ADDRESS_EDIT = "/person/tvPersonAddressEdit.xhtml";
+    private static String EDIT_PERSON = "/person/personEdit.xhtml?faces-redirect=true";
+    private static String TV_PERSON_ADDRESS_EDIT = "/person/tvPersonAddressEdit.xhtml?faces-redirect=true";
     private Integer activeIndex;
     private PersonContext personContext;
 
@@ -52,5 +53,13 @@ public class PersonController implements Serializable {
             personContext.setEditingAddress(null);
         }
         return EDIT_PERSON;
+    }
+    public String savePerson(){
+        StringBuilder builder = new StringBuilder();
+        if(personContext.getPersonPack().getPerson() != null){
+            builder.append("PersonController.savePerson()").append(personContext.getPersonPack().toString());
+            logger.info(builder.toString());
+        }
+        return HOME;
     }
 }
